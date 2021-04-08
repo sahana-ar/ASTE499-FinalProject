@@ -1,0 +1,14 @@
+{
+	"Launch Vehicle 1": [
+		{ "Density" : 5  ,  "Units" : "kg/m^3" },
+		{ "Nozzle Throat Area" : 0.036  ,  "Units" : "m^2" },
+		{ "Nozzle Exit Area" : 3.2  ,  "Units" : "m^2" },
+		{ "Throat Length" : 5  ,  "Units" : "m" },
+		{ "Mass Flow Rate" : 317  ,  "Units" : "kg/s" },
+		{ "Initial Mass" : 15000  ,  "Units" : "kg" },
+		{ "Propelant Mass" : 12821.5  ,  "Units" : "kg" },
+		{ "Payload Mass" : 1000  ,  "Units" : "kg" },
+		{ "Specific Impulse" : 378  ,  "Units" : "s" },
+		{ "Delta V" : 6000  ,  "Units" : "m/s" }
+	]
+}
