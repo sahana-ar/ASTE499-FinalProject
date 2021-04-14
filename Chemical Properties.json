@@ -1,0 +1,12 @@
+{
+	"Chemical Properties": [
+		{ "H2 Gamma" : 1.41  ,  "Units" : "unitless" },
+		{ "Methane Gamma" : 1.32  ,  "Units" : "unitless" }
+		{ "O2 Gamma" : 1.4  ,  "Units" : "unitless" },
+		{ "CO Gamma" : 1.4  ,  "Units" : "unitless" }
+		{ "H2 Gas Constant" : 4.1245  ,  "Units" : "J/K" },
+		{ "Methane Gas Constant" : 0.52  ,  "Units" : "J/K" }
+		{ "O2 Gas Constant" : 0.26  ,  "Units" : "J/K" },
+		{ "CO Gas Constant" : 0.297  ,  "Units" : "J/K" }
+	]
+}
