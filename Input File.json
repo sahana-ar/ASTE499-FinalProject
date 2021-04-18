@@ -1,0 +1,26 @@
+{
+	"Launch Vehicle 1": [
+		{ "Density" : 5  ,  "Units" : "kg/m^3" },
+		{ "Nozzle Throat Area" : 0.036  ,  "Units" : "m^2" },
+		{ "Nozzle Exit Area" : 3.2  ,  "Units" : "m^2" },
+		{ "Throat Length" : 5  ,  "Units" : "m" },
+		{ "Mass Flow Rate" : 317  ,  "Units" : "kg/s" },
+		{ "Initial Mass" : 15000  ,  "Units" : "kg" },
+		{ "Propelant Mass" : 12821.5  ,  "Units" : "kg" },
+		{ "Payload Mass" : 1000  ,  "Units" : "kg" },
+		{ "Specific Impulse" : 378  ,  "Units" : "s" },
+		{ "Delta V" : 6000  ,  "Units" : "m/s" },
+		{ "Optimal Isp" : 800  ,  "Units" : "s" },
+		{ "Optimal Thrust" : 5000  ,  "Units" : "N" },
+	]
+	"Chemical Properties": [
+		{ "H2 Gamma" : 1.41  ,  "Units" : "unitless" },
+		{ "Methane Gamma" : 1.32  ,  "Units" : "unitless" }
+		{ "O2 Gamma" : 1.4  ,  "Units" : "unitless" },
+		{ "CO Gamma" : 1.4  ,  "Units" : "unitless" }
+		{ "H2 Gas Constant" : 4.1245  ,  "Units" : "J/K" },
+		{ "Methane Gas Constant" : 0.52  ,  "Units" : "J/K" }
+		{ "O2 Gas Constant" : 0.26  ,  "Units" : "J/K" },
+		{ "CO Gas Constant" : 0.297  ,  "Units" : "J/K" }
+	]
+}
