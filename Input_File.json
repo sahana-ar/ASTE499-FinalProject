@@ -1,0 +1,33 @@
+{
+	"LaunchVehicle1": [
+		{ "Density" : 5  ,  "Units" : "kg/m^3" },
+		{ "NozzleThroatArea" : 0.036  ,  "Units" : "m^2" },
+		{ "NozzleExitArea" : 3.2  ,  "Units" : "m^2" },
+		{ "ThroatLength" : 5  ,  "Units" : "m" },
+		{ "MassFlowRate" : 317  ,  "Units" : "kg/s" },
+		{ "InitialMass" : 15000  ,  "Units" : "kg" },
+		{ "PropelantMass" : 12821.5  ,  "Units" : "kg" },
+		{ "PayloadMass" : 1000  ,  "Units" : "kg" },
+		{ "SpecificImpulse" : 378  ,  "Units" : "s" },
+		{ "DeltaV" : 6000  ,  "Units" : "m/s" },
+		{ "OptimalIsp" : 800  ,  "Units" : "s" },
+		{ "OptimalThrust" : 5000  ,  "Units" : "N" },
+	],
+	"ChemicalProperties": [
+		{ "H2Gamma" : 1.41  ,  "Units" : "unitless" },
+		{ "MethaneGamma" : 1.32  ,  "Units" : "unitless" }
+		{ "O2Gamma" : 1.4  ,  "Units" : "unitless" },
+		{ "COGamma" : 1.4  ,  "Units" : "unitless" }
+		{ "H2GasConstant" : 4.1245  ,  "Units" : "J/K" },
+		{ "MethaneGasConstant" : 0.52  ,  "Units" : "J/K" }
+		{ "O2GasConstant" : 0.26  ,  "Units" : "J/K" },
+		{ "COGasConstant" : 0.297  ,  "Units" : "J/K" }
+	],
+	"Parameter Variations": [
+		{"field": "LaunchVehicle1.Density", "values": [3,4,5]},
+		{"field": "LaunchVehicle1.ThroatLength", "values": [3,4,5]},
+		{"field": "LaunchVehicle1.PropelantMass", "values": [3,4,5]},
+		{"field": "ChemicalProperties.H2Gamma", "values": [3,4,5]},
+
+	]
+}

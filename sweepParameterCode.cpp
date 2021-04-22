@@ -3,7 +3,7 @@
 //doesn't actually use all these libraries, so I'll cut them down later
 #include <iostream>
 #include <iomanip>
-#include <vector>
+#include <vector> 
 #include <valarray>
 #include <map>
 #include <string>
@@ -85,7 +85,7 @@ bool isNumber(string s)
 int main() {
 
     //loads rocket json as object and assigns it to Json::Value rocket. 
-    std::string rocketJSONPath = "Example.json";
+    std::string rocketJSONPath = "Input_File.json";
     std::ifstream rocketStream(rocketJSONPath);
     Json::Value rocket;
     rocketStream >> rocket;
