@@ -29,9 +29,32 @@
 
 
 using namespace std;
-
+/// The Rocket class is used to calculate rocket performance parameters.
+/// 
+/// This class calculates an optimal thrust and specific impulse based off of the inputted rocket nozzle parameters.
 class Rocket{
      
+    /// This class is used to initialize conditions
+    ///
+    /// Parameters are pulled from an input file
+    /// @param acceleration Acceleration of the launch vehicle
+    /// @param velocity Velocity of the launch vehicle
+    /// @param altitude Altitude of the launch vehicle
+    /// @param thrust Thrust of the rocket engine
+    /// @param Isp Specific impulse of the rocket engine
+    /// @param combustionpressure Combustion pressure of the rocket nozzle
+    /// @param rocketmass The mass of the rocket
+    /// @param enginemass The mass of the engine
+    /// @param propmass The mass of the propellant
+    /// @param density Fuel density in the nozzle of the rocket engine
+    /// @param thrustdura Thrust firing duration
+    /// @param time Time of rocket engine burn
+    /// @param exitarea Exit area of the rocket nozzle
+    /// @param evel Exit velocity of the rocket nozzle
+    /// @param thru Thrust of the nozzle
+    /// @param acc Nozzle acceleration
+    /// @param gasconst Gas constant of given fuel
+
     public:
 
         // default construct
@@ -83,6 +106,11 @@ double R)
 // calculate a thrust of the rocket at the moment
 double Rocket::thrust()
 {
+    /// This code calculates the exit velocity and thrust of the rocket
+    ///
+    /// Calculates thrust and exit velocity usinig the propellant mass, thrust duration, density, and exit area.
+    /// @param evel Exit velocity
+    /// @param thru Thrust
     
     // calculates an exit velocity of the thruster
     evel = (propmass/thrustdura) / (density*exitarea);
@@ -95,6 +123,13 @@ double Rocket::thrust()
 // calculate a specific impulse of the rocket
 double Rocket::Isp()
 {
+    /// This code calculates the Specific impulse of the rocket
+    ///
+    /// Calculates the velocity of the thruster and the thrust of the engine which gives the specific impulse of the rocket
+    /// @param evel Exit velocity of the thruster
+    /// @param thru Thrust of the engine
+    /// @param isp Specific impulse
+
     double isp;
 
     // calculates an exit velocity of the thruster
@@ -110,6 +145,12 @@ double Rocket::Isp()
 // calculate an acceleration of the rocket
 double Rocket::acceleration()
 {
+    /// This code calculates the acceleration of the rocket
+    ///
+    /// Calculates the exit velicity, thrust and total mass which gives the acceleration of the rocket
+    /// @param totmass Total mass of the launch vehicle
+    /// @param acc acceleration of the rocket
+
     double totmass;
 
     // calculates an exit velocity of the thruster
@@ -130,6 +171,10 @@ double Rocket::acceleration()
 // calculate a velocity of the rocket at the moment
 double Rocket::velocity()
 {
+   /// This code calculates the velocity of the rocket at the moment
+   ///
+   /// Calculates exit velocity of the thruster, thrust of the engine, and total mass and acceleration of the rocket, which gives rocket velocity
+   /// @param velocity Velocity of the rocket at the moment
 
     double vel[time];
     double totmass[time];
@@ -162,6 +207,11 @@ double Rocket::velocity()
 // calculate an altitude of the rocket
 double Rocket::altitude()
 {
+    /// This code calculates the altitude of the rocket
+    ///
+    /// Calculates exit velocity of the thruster, thrust of the engine, total mass and acceleration of the rocket, which gives the altitude of the rocket.
+    /// @param altitude Altitude of the rocket
+    
     double totheight = 0;
     double height[time];
     double vel[time];
@@ -251,7 +301,9 @@ bool isNumber(string s)
 
 
 int main() {
-
+    /// This function sweeps through different parameters to find the optimal solution
+    /// 
+    /// The sweeping function sweeps through different values of 3 different parameters. The optimized Thrust, Isp, and acceleration are then outputted.
     std::string rocketJSONPath = "Input_File.json";
     std::ifstream rocketStream(rocketJSONPath);
     Json::Value Input_File;
@@ -274,14 +326,14 @@ int main() {
     foldername << "Nominal_Run";
     sweepJsonNames.push_back(foldername.str());
 
-    //creates field for output folder name for nominal case
+    /// creates field for output folder name for nominal case
     (*(rockets[0]))["output_folder"] = sweepJsonNames[0];
 
-    //creates output directory for nominal case
+    /// creates output directory for nominal case
     auto outputSweepFolderPath = outputFolderPath / (*(rockets[0]))["output_folder"].asString();
     boost::filesystem::create_directories(outputSweepFolderPath);
 
-    //push json object back into corresponding sweep run folder
+    /// push json object back into corresponding sweep run folder
     std::stringstream sweepname;
     sweepname << (*(rockets[0]))["output_folder"] << Input_File["name"].asString() << ".json";
     auto newSweepJsonFilePath = outputSweepFolderPath / sweepname.str();
@@ -301,8 +353,7 @@ int main() {
         }
         array.push_back(values);
     }
-
-    // creates arrays of the parameters 
+    /// creates arrays of the parameters
     for (int i = 0; i < num; i++) {
         double min = array[i][0];
         double max = array[i][1];
@@ -310,7 +361,7 @@ int main() {
         auto paramX = range(min, max, N);
         params.push_back(paramX);
     }
-    // computes the cartesian product of the
+    /// computes the cartesian product of the
     auto parametersFull = cartesian(params);
 
     vector<vector<string>> parameterNames;
@@ -321,7 +372,9 @@ int main() {
         parameterNames.push_back(parameterX);
     }
 
-    //puts cartesian product values back into the json and prints updated object values to validate
+    /// puts cartesian product values back into the json and prints updated object values to validate
+    ///
+    
     //auto rocket = nominalRocket;
     for (int numSweep = 0; numSweep<parametersFull.size(); numSweep++){
         rockets.push_back(new Json::Value(Input_File));
@@ -338,7 +391,7 @@ int main() {
             *current = parametersFull[numSweep][j];
         }
 
-        //pushes to vector of folder names and creates field in corresponding json object
+        /// pushes to vector of folder names and creates field in corresponding json object
         std::stringstream foldername;
         foldername << "Sweep_" << Input_File["name"].asString() << "[";
         for (int k = 0; k<parametersFull[0].size(); k++) foldername << parametersFull[numSweep][k] << ", ";
@@ -346,12 +399,12 @@ int main() {
         sweepJsonNames.push_back(foldername.str());
         (*(rockets[numSweep+1]))["output_folder"] = sweepJsonNames[numSweep+1];
 
-        //creates output folder for each sweep
+        /// creates output folder for each sweep
         auto outputSweepFolderPath = outputFolderPath / sweepJsonNames.back();
         boost::filesystem::create_directories(outputSweepFolderPath);
 
 
-        //push json object back into corresponding sweep run folder
+        /// push json object back into corresponding sweep run folder
         std::stringstream sweepname;
         sweepname << (*(rockets[numSweep+1]))["output_folder"];
         auto newSweepJsonFilePath = outputSweepFolderPath / sweepname.str();

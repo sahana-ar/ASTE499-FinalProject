@@ -1,0 +1,112 @@
+\hypertarget{_rocket_8cpp}{}\doxysection{Rocket.\+cpp File Reference}
+\label{_rocket_8cpp}\index{Rocket.cpp@{Rocket.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$valarray$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}json/value.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json/json.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$boost/thread.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/filesystem/path.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/filesystem.\+hpp$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_rocket}{Rocket}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_rocket}{Rocket}} class is used to calculate rocket performance parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_rocket_8cpp_a1c13e1c5e5f8172c1cea7d5830431849}{BOOST\+\_\+\+NO\+\_\+\+CXX11\+\_\+\+SCOPED\+\_\+\+ENUMS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{_rocket_8cpp_a051931de5a49ac00f48766bc99e9f84a}{split}} (const string \&str, const string \&delim)
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{_rocket_8cpp_abdff9c297eb33a51d3e94ae7ed7a4644}{range}} (double min, double max, size\+\_\+t N)
+\item 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{_rocket_8cpp_a8f8bdd39473b7a5a1478bb778b7b88b4}{cartesian}} (vector$<$ vector$<$ double $>$ $>$ \&v)
+\item 
+bool \mbox{\hyperlink{_rocket_8cpp_ab55bd51742d6919581c4bc513e955953}{is\+Number}} (string s)
+\item 
+int \mbox{\hyperlink{_rocket_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_rocket_8cpp_a1c13e1c5e5f8172c1cea7d5830431849}\label{_rocket_8cpp_a1c13e1c5e5f8172c1cea7d5830431849}} 
+\index{Rocket.cpp@{Rocket.cpp}!BOOST\_NO\_CXX11\_SCOPED\_ENUMS@{BOOST\_NO\_CXX11\_SCOPED\_ENUMS}}
+\index{BOOST\_NO\_CXX11\_SCOPED\_ENUMS@{BOOST\_NO\_CXX11\_SCOPED\_ENUMS}!Rocket.cpp@{Rocket.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_NO\_CXX11\_SCOPED\_ENUMS}{BOOST\_NO\_CXX11\_SCOPED\_ENUMS}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+NO\+\_\+\+CXX11\+\_\+\+SCOPED\+\_\+\+ENUMS}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_rocket_8cpp_a8f8bdd39473b7a5a1478bb778b7b88b4}\label{_rocket_8cpp_a8f8bdd39473b7a5a1478bb778b7b88b4}} 
+\index{Rocket.cpp@{Rocket.cpp}!cartesian@{cartesian}}
+\index{cartesian@{cartesian}!Rocket.cpp@{Rocket.cpp}}
+\doxysubsubsection{\texorpdfstring{cartesian()}{cartesian()}}
+{\footnotesize\ttfamily vector$<$vector$<$double$>$ $>$ cartesian (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_rocket_8cpp_ab55bd51742d6919581c4bc513e955953}\label{_rocket_8cpp_ab55bd51742d6919581c4bc513e955953}} 
+\index{Rocket.cpp@{Rocket.cpp}!isNumber@{isNumber}}
+\index{isNumber@{isNumber}!Rocket.cpp@{Rocket.cpp}}
+\doxysubsubsection{\texorpdfstring{isNumber()}{isNumber()}}
+{\footnotesize\ttfamily bool is\+Number (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_rocket_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_rocket_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Rocket.cpp@{Rocket.cpp}!main@{main}}
+\index{main@{main}!Rocket.cpp@{Rocket.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function sweeps through different parameters to find the optimal solution
+
+The sweeping function sweeps through different values of 3 different parameters. The optimized Thrust, Isp, and acceleration are then outputted.
+
+creates field for output folder name for nominal case
+
+creates output directory for nominal case
+
+push json object back into corresponding sweep run folder
+
+creates arrays of the parameters
+
+computes the cartesian product of the
+
+puts cartesian product values back into the json and prints updated object values to validate
+
+pushes to vector of folder names and creates field in corresponding json object
+
+creates output folder for each sweep
+
+push json object back into corresponding sweep run folder\mbox{\Hypertarget{_rocket_8cpp_abdff9c297eb33a51d3e94ae7ed7a4644}\label{_rocket_8cpp_abdff9c297eb33a51d3e94ae7ed7a4644}} 
+\index{Rocket.cpp@{Rocket.cpp}!range@{range}}
+\index{range@{range}!Rocket.cpp@{Rocket.cpp}}
+\doxysubsubsection{\texorpdfstring{range()}{range()}}
+{\footnotesize\ttfamily vector$<$double$>$ range (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max,  }\item[{size\+\_\+t}]{N }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_rocket_8cpp_a051931de5a49ac00f48766bc99e9f84a}\label{_rocket_8cpp_a051931de5a49ac00f48766bc99e9f84a}} 
+\index{Rocket.cpp@{Rocket.cpp}!split@{split}}
+\index{split@{split}!Rocket.cpp@{Rocket.cpp}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily vector$<$string$>$ split (\begin{DoxyParamCaption}\item[{const string \&}]{str,  }\item[{const string \&}]{delim }\end{DoxyParamCaption})}
+

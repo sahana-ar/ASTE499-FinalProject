@@ -1,0 +1,161 @@
+\hypertarget{class_rocket}{}\doxysection{Rocket Class Reference}
+\label{class_rocket}\index{Rocket@{Rocket}}
+
+
+The \mbox{\hyperlink{class_rocket}{Rocket}} class is used to calculate rocket performance parameters.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_rocket_a372a072f1c3a977c40938ba56202ecc6}{Rocket}} ()
+\begin{DoxyCompactList}\small\item\em This class is used to initialize conditions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rocket_a2bd27b71b69a650f446dbf66b76c7e09}{Rocket}} (double, double, double, double, double, int, double, double, double)
+\item 
+double \mbox{\hyperlink{class_rocket_ad51b578b3900d65e96adcc8560e1ef28}{acceleration}} ()
+\item 
+double \mbox{\hyperlink{class_rocket_a21a06158797d201c9e1a418f1143aeca}{velocity}} ()
+\item 
+double \mbox{\hyperlink{class_rocket_a0a08ab740fc83a7a79e3e15cb636eafc}{altitude}} ()
+\item 
+double \mbox{\hyperlink{class_rocket_a10dcb0eaa366fa40efd91d339b968dbd}{thrust}} ()
+\item 
+double \mbox{\hyperlink{class_rocket_a3b876cd8e3e505d10ac78bd705624bb2}{Isp}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_rocket}{Rocket}} class is used to calculate rocket performance parameters. 
+
+This class calculates an optimal thrust and specific impulse based off of the inputted rocket nozzle parameters. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_rocket_a372a072f1c3a977c40938ba56202ecc6}\label{class_rocket_a372a072f1c3a977c40938ba56202ecc6}} 
+\index{Rocket@{Rocket}!Rocket@{Rocket}}
+\index{Rocket@{Rocket}!Rocket@{Rocket}}
+\doxysubsubsection{\texorpdfstring{Rocket()}{Rocket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Rocket\+::\+Rocket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This class is used to initialize conditions. 
+
+Parameters are pulled from an input file 
+\begin{DoxyParams}{Parameters}
+{\em acceleration} & Acceleration of the launch vehicle \\
+\hline
+{\em velocity} & Velocity of the launch vehicle \\
+\hline
+{\em altitude} & Altitude of the launch vehicle \\
+\hline
+{\em thrust} & Thrust of the rocket engine \\
+\hline
+{\em Isp} & Specific impulse of the rocket engine \\
+\hline
+{\em combustionpressure} & Combustion pressure of the rocket nozzle \\
+\hline
+{\em rocketmass} & The mass of the rocket \\
+\hline
+{\em enginemass} & The mass of the engine \\
+\hline
+{\em propmass} & The mass of the propellant \\
+\hline
+{\em density} & Fuel density in the nozzle of the rocket engine \\
+\hline
+{\em thrustdura} & Thrust firing duration \\
+\hline
+{\em time} & Time of rocket engine burn \\
+\hline
+{\em exitarea} & Exit area of the rocket nozzle \\
+\hline
+{\em evel} & Exit velocity of the rocket nozzle \\
+\hline
+{\em thru} & Thrust of the nozzle \\
+\hline
+{\em acc} & Nozzle acceleration \\
+\hline
+{\em gasconst} & Gas constant of given fuel \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rocket_a2bd27b71b69a650f446dbf66b76c7e09}\label{class_rocket_a2bd27b71b69a650f446dbf66b76c7e09}} 
+\index{Rocket@{Rocket}!Rocket@{Rocket}}
+\index{Rocket@{Rocket}!Rocket@{Rocket}}
+\doxysubsubsection{\texorpdfstring{Rocket()}{Rocket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Rocket\+::\+Rocket (\begin{DoxyParamCaption}\item[{double}]{rmass,  }\item[{double}]{emass,  }\item[{double}]{pmass,  }\item[{double}]{den,  }\item[{double}]{dura,  }\item[{int}]{t,  }\item[{double}]{Ae,  }\item[{double}]{compress,  }\item[{double}]{R }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rocket_ad51b578b3900d65e96adcc8560e1ef28}\label{class_rocket_ad51b578b3900d65e96adcc8560e1ef28}} 
+\index{Rocket@{Rocket}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Rocket@{Rocket}}
+\doxysubsubsection{\texorpdfstring{acceleration()}{acceleration()}}
+{\footnotesize\ttfamily double Rocket\+::acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This code calculates the acceleration of the rocket
+
+Calculates the exit velicity, thrust and total mass which gives the acceleration of the rocket 
+\begin{DoxyParams}{Parameters}
+{\em totmass} & Total mass of the launch vehicle \\
+\hline
+{\em acc} & acceleration of the rocket\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rocket_a0a08ab740fc83a7a79e3e15cb636eafc}\label{class_rocket_a0a08ab740fc83a7a79e3e15cb636eafc}} 
+\index{Rocket@{Rocket}!altitude@{altitude}}
+\index{altitude@{altitude}!Rocket@{Rocket}}
+\doxysubsubsection{\texorpdfstring{altitude()}{altitude()}}
+{\footnotesize\ttfamily double Rocket\+::altitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This code calculates the altitude of the rocket
+
+Calculates exit velocity of the thruster, thrust of the engine, total mass and acceleration of the rocket, which gives the altitude of the rocket. 
+\begin{DoxyParams}{Parameters}
+{\em altitude} & Altitude of the rocket\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rocket_a3b876cd8e3e505d10ac78bd705624bb2}\label{class_rocket_a3b876cd8e3e505d10ac78bd705624bb2}} 
+\index{Rocket@{Rocket}!Isp@{Isp}}
+\index{Isp@{Isp}!Rocket@{Rocket}}
+\doxysubsubsection{\texorpdfstring{Isp()}{Isp()}}
+{\footnotesize\ttfamily double Rocket\+::\+Isp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This code calculates the Specific impulse of the rocket
+
+Calculates the velocity of the thruster and the thrust of the engine which gives the specific impulse of the rocket 
+\begin{DoxyParams}{Parameters}
+{\em evel} & Exit velocity of the thruster \\
+\hline
+{\em thru} & Thrust of the engine \\
+\hline
+{\em isp} & Specific impulse\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rocket_a10dcb0eaa366fa40efd91d339b968dbd}\label{class_rocket_a10dcb0eaa366fa40efd91d339b968dbd}} 
+\index{Rocket@{Rocket}!thrust@{thrust}}
+\index{thrust@{thrust}!Rocket@{Rocket}}
+\doxysubsubsection{\texorpdfstring{thrust()}{thrust()}}
+{\footnotesize\ttfamily double Rocket\+::thrust (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This code calculates the exit velocity and thrust of the rocket
+
+Calculates thrust and exit velocity usinig the propellant mass, thrust duration, density, and exit area. 
+\begin{DoxyParams}{Parameters}
+{\em evel} & Exit velocity \\
+\hline
+{\em thru} & Thrust\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rocket_a21a06158797d201c9e1a418f1143aeca}\label{class_rocket_a21a06158797d201c9e1a418f1143aeca}} 
+\index{Rocket@{Rocket}!velocity@{velocity}}
+\index{velocity@{velocity}!Rocket@{Rocket}}
+\doxysubsubsection{\texorpdfstring{velocity()}{velocity()}}
+{\footnotesize\ttfamily double Rocket\+::velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This code calculates the velocity of the rocket at the moment
+
+Calculates exit velocity of the thruster, thrust of the engine, and total mass and acceleration of the rocket, which gives rocket velocity 
+\begin{DoxyParams}{Parameters}
+{\em velocity} & Velocity of the rocket at the moment\\
+\hline
+\end{DoxyParams}
