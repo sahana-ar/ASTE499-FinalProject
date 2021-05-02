@@ -15,6 +15,7 @@
 #include <utility>
 #include <tuple>
 #include <cstdlib>
+#include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <numeric>
@@ -25,7 +26,7 @@
 #include <queue>
 
 using namespace std;
-using namespace boost::filesystem;
+//using namespace boost::filesystem;
 
 //Note: some indexing and variable need to be renamed to accomodate our json fields, but I can do that later once
 //all the inputs are finalized
@@ -85,10 +86,13 @@ bool isNumber(string s)
 int main() {
 
     //loads rocket json as object and assigns it to Json::Value rocket. 
-    std::string rocketJSONPath = "Input_File.json";
-    std::ifstream rocketStream(rocketJSONPath);
+    //std::string rocketJSONPath = "Input_File.json";
+    std::ifstream rocketStream("Input_File.json");
     Json::Value rocket;
     rocketStream >> rocket;
+
+    std::vector<Json::Value*> rockets;
+    rockets.push_back(&rocket);
 
 	vector<vector<double>> params;
     vector<vector<double>> array;
@@ -124,21 +128,21 @@ int main() {
     }
 
     //puts cartesian product values back into the json and prints updated object values to validate
-    for (int i = 0; i<parametersFull.size(); i++){
+    //auto rocket = nominalRocket;
+    for (int numSweep = 0; numSweep<parametersFull.size(); numSweep++){
+        rockets.push_back(new Json::Value(rocket));
         for (int j=0; j<parametersFull[0].size(); j++){
-            Json::Value* current = &rocket;
-                for (std::string param : parameterNames[j]) {
-                    if (isNumber(param)) {
-                        int number = stoi(param);
-          				current = &(*current)[number];
-                        continue;
-                    }
-                current = &(*current)[param];
+            Json::Value* current = rockets.back();
+               for (std::string param : parameterNames[j]) {
+                   if (isNumber(param)) {
+                    int number = stoi(param);
+                       current = &(*current)[number];
+                       continue;
                 }
-            *current = parametersFull[i][j];
+                current = &(*current)[param];
+            }
+            *current = parametersFull[numSweep][j];
         }
-
-        //**PROGRAM GOES HERE**
     }
 
 }
