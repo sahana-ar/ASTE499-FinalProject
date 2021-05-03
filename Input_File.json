@@ -22,7 +22,7 @@
 		 "PropelantMass" : 12821.5  ,  
 		 "Units" : "kg" ,
 
-		 "ThrustDuration" : 378, 
+		 "ThrustDuration" : 800, 
 		 "Units" : "s",
 
 		 "Time" : 100, 
