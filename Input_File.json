@@ -22,14 +22,14 @@
 		 "PropelantMass" : 12821.5  ,  
 		 "Units" : "kg" ,
 
-		 "ThrustDuration" : 45, 
+		 "ThrustDuration" : 378, 
 		 "Units" : "s",
 
 		 "Time" : 100, 
 		 "Units" : "s",
 
-		 "CombustionPressure" : 3000, 
-		 "Units" : "psi",
+		 "CombustionPressure" : 50000, 
+		 "Units" : "Pa",
 
 		 "PayloadMass" : 1000  ,  
 		 "Units" : "kg" ,
