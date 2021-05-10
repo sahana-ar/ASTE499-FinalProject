@@ -417,8 +417,10 @@ int main() {
 
     for (auto Input_File : rockets) {
 
-        std::ofstream myFile((*Input_File)["output_folder"].asString());
-        myFile << "acceleration, velocity, altitude, thrust, Isp\n";
+        std::stringstream csvName;
+        csvName << (*Input_File)["output_folder"].asString() << ".csv";
+        std::ofstream myFile(csvName.str());
+        myFile << "time, acceleration, velocity, altitude, thrust, Isp\n";
 
 
 
@@ -434,11 +436,12 @@ int main() {
 
         for (int i = 0; i < t; i++) {
         Rocket rocket(rmass, emass, pmass, den, dura, i, Ae, compress, R);
-        myFile << rocket.acceleration();
-        myFile << rocket.velocity();
-        myFile << rocket.altitude();
-        myFile << rocket.thrust(); 
-        myFile << rocket.Isp() << "\n";
+        myFile << i << " ";
+        myFile << rocket.acceleration() << " " ;
+        myFile << rocket.velocity() << " " ;
+        myFile << rocket.altitude() << " " ;
+        myFile << rocket.thrust() << " " ; 
+        myFile << rocket.Isp() << "\n" << " " ;
         }
     }
 
